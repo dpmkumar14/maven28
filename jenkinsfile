@@ -6,7 +6,7 @@ pipeline {
              git "https://github.com/dpmkumar14/my-app.git"
             }
         }
-        stage('---clean---') {
+        stage('---cleanNow---') {
             steps {
                 sh "mvn clean"
             }
