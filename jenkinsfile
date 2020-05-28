@@ -1,0 +1,26 @@
+pipeline {
+    agent {label 'Node1'}
+    stages {
+        stage('Cloning Git') {
+            steps {
+             git "https://github.com/dpmkumar14/my-app.git"
+            }
+        }
+        stage('---clean---') {
+            steps {
+                sh "mvn clean"
+            }
+        }
+        stage('--test--') {
+            steps {
+                sh "mvn test"
+            }
+        }
+        stage('--package--') {
+            steps {
+                sh "mvn package"
+            }
+        }
+    
+}
+}
